@@ -1,7 +1,8 @@
 # Key Scheduling Algorithm
 def key_schedular(key):
     j = 0
-    s = [i for i in range(256)]  # state vector of 256 bit
+    s = [i for i in range(256)]  # initial state vector of 256 bit
+    print(f"s vector = {s}\n")
     for i in range(256):
         j = (j + s[i] + key[i % len(key)]) % 256
         s[i], s[j] = s[j], s[i]  # swap s[i], s[j]
@@ -55,5 +56,5 @@ if __name__ == '__main__':
 
     print("-----Decryption-----\n")
     # Decryption
-    original_text, s1, key_stream1 = decryption(key, cipher_text)
-    print(f"s1 = {s}\n\nkey stream = {key_stream1}\n\nDecrypted text: {original_text.decode()}\n")
+    original_text, s1, key_stream1, = decryption(key, cipher_text)
+    print(f"s = {s}\n\nkey stream = {key_stream1}\n\nDecrypted text: {original_text.decode()}\n")
