@@ -45,7 +45,7 @@ if __name__ == '__main__':
     key = "3402"
     text_len = len(plain_text)
 
-    print(f"Plaintext: {plain_text}\n")
+    print(f"\nPlaintext: {plain_text}\n")
     print(f"Key: {key}\n")
 
     print("-----Encryption-----\n")
